@@ -10,7 +10,6 @@ function showDish(dish){
     const template = document.querySelector("template").content;
     const copy = template.cloneNode(true);
     copy.querySelector("summary").textContent=dish.name;
-    copy.querySelector("p").textContent=dish.shortdescription;
     copy.querySelector(".price").textContent=dish.price;
 
     if(dish.discount){
@@ -30,7 +29,7 @@ function showDish(dish){
 
 
 
-
+//copy.querySelector("p").textContent=dish.shortdescription;
 
 //const button = document.querySelector("button");
 
