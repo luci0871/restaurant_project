@@ -1,0 +1,71 @@
+ body{
+    background: url(pics/eater.jpeg) no-repeat center center fixed;
+    background-size: cover;
+    font-family: sans-serif;
+}
+
+header{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 75 0px) {
+    main{
+
+    grid-template-columns: 1fr 1fr;
+}
+}
+
+.head{
+    float:left;
+    color: gold;
+    font-family: cursive;
+    font-size: 30px;
+}
+
+.container{
+    width: 70%;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 1%;
+}
+
+.showcase h1{
+    color: white;
+    font-family: cursive;
+    text-align: center;
+}
+
+.showcase h3{
+    color: white;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.category{
+    color: white;
+    margin-top: 5%;
+    display: flex;
+    text-align: center;
+    font-family: cursive;
+}
+
+img{
+    width: 30%;
+    border-radius: 50%;
+}
+
+.pizza, .salad{
+    padding-left: 1.5rem;
+}
+
+h4{
+    font-size: 1rem;
+    margin: 3%;
+}
