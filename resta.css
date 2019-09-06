@@ -15,6 +15,17 @@ body{
     background-size: cover;
     font-family: sans-serif;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav a,
+button,
+footer{
+    font-family: "Oswald", sans-serif;
+}
 
 *{
     box-sizing: border-box;
@@ -25,13 +36,15 @@ header{
     margin: auto;
     overflow: hidden;
 }
-
+/*
 main{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     grid-gap: 25px;
     grid-column-gap: 25px;
 }
+
+*/
 
 @media screen and (min-width: 750px) {
     main{
@@ -53,7 +66,13 @@ img{
     border-radius: 50%;
 }
 
-nav
+h1{
+    color: white;
+}
+
+nav a, h1{
+    text-transform: capitalize;
+}
 
 nav{
     background-color: var(--secondary-light);
@@ -77,6 +96,20 @@ nav a:first-child{
 
 nav a:hover{
     text-decoration: underline;
+}
+
+.productlist>section {
+    padding-top: 100px;
+    display: grid;
+    max-width: 1200px;
+    margin: auto;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 60px;
+    margin-bottom:
+}
+
+.productlist>section>h1 {
+    grid-column: 1/4;
 }
 
 .productlist img{
@@ -144,7 +177,7 @@ article.containAlcohol div.containAlcohol{
     top: 0;
     right: 0;
     width: 100%;
-    padding: 1rem;
+    padding: 1px;
     text-align: center;
     content: "Sold Out";
     background-color: red;
@@ -170,4 +203,8 @@ footer{
 
 footer p{
     margin-left: 60px;
+}
+
+p{
+      text-align: center;
 }

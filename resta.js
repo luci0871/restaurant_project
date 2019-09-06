@@ -36,7 +36,7 @@
 
 
  function showDish(dish) {
-     console.log(dish)
+     console.log(`I am a ${dish.category} and I need to go to #${dish.category}`)
      const template = document.querySelector("template").content;
      const copy = template.cloneNode(true);
      copy.querySelector(".data_name").textContent = dish.name;
@@ -57,7 +57,7 @@
 
 
 
-     document.querySelector(".productlist").appendChild(copy);
+     document.querySelector(`#${dish.category} `).appendChild(copy);
  }
 
  /*
