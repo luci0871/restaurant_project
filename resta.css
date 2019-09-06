@@ -1,4 +1,16 @@
- body{
+:root {
+    --primary: hsl(210, 4%, 89%);
+    --secondary: hsl(211, 67%, 21%);
+    --tertiary: hsl(120, 33%, 1%);
+    --secondary-light: hsl(219, 73%, 61%);
+    --tertiary-light: hsl(210, 34%, 63%);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
     background: url(pics/eater.jpeg) no-repeat center center fixed;
     background-size: cover;
     font-family: sans-serif;
@@ -16,13 +28,15 @@ header{
 
 main{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 25px;
+    grid-column-gap: 25px;
 }
 
-@media screen and (min-width: 75 0px) {
+@media screen and (min-width: 750px) {
     main{
 
-    grid-template-columns: 1fr 1fr;
+   /* grid-template-columns: 1fr 1fr;*/
 }
 }
 
@@ -38,6 +52,8 @@ img{
     width: 30%;
     border-radius: 50%;
 }
+
+nav
 
 nav{
     background-color: var(--secondary-light);
@@ -69,6 +85,11 @@ nav a:hover{
     height: auto;
     filter: grayscale(100%);
     transition: all 0.4s;
+}
+
+.productlist img:hover{
+    filter: grayscale(0%);
+    border-radius: 0;
 }
 
 .product{
@@ -110,4 +131,43 @@ article.containAlcohol div.containAlcohol{
     padding: 8px;
     color: #fff;
     transform: translate(0px, -60px) rotate(-45deg);
+}
+
+.discount{
+    text-decoration: line-through;
+    color: crimson;
+}
+
+.soldOut::after{
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    content: "Sold Out";
+    background-color: red;
+}
+
+.onSale .data_price{
+    text-decoration: line-through;
+}
+
+.onSale data_discount{
+    font-size: 1.2rem;
+    color: green;
+}
+
+footer{
+    background: var(--secondary);
+    margin-bottom: 0;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+footer p{
+    margin-left: 60px;
 }

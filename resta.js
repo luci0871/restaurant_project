@@ -1,9 +1,39 @@
- fetch("https://kea-alt-del.dk/t5/api/productlist")
-     .then(function (response) {
-         return response.json()
-     }).then(function (data) {
-         data.forEach(showDish)
+ /*
+ 1 fetch cats
+ 2 build sections
+ 3 fetch products
+ 4 assign each prod to its parent
+*/
+
+ fetch("https://kea-alt-del.dk/t5/api/categories")
+     .then(res => res.json())
+     .then(function (data) {
+         data.forEach(buildCategory)
+        getProducts();
      })
+
+ function buildCategory(data) {
+     const section = document.createElement("section");
+     const header = document.createElement("h1");
+     header.textContent = data;
+     section.setAttribute("id", data)
+     section.appendChild(header);
+     document.querySelector("main").appendChild(section);
+
+     //console.log(data)
+ }
+
+
+ function getProducts() {
+     fetch("https://kea-alt-del.dk/t5/api/productlist")
+         .then(function (response) {
+             return response.json()
+         }).then(function (data) {
+             data.forEach(showDish)
+         })
+ }
+
+
 
  function showDish(dish) {
      console.log(dish)
@@ -11,11 +41,18 @@
      const copy = template.cloneNode(true);
      copy.querySelector(".data_name").textContent = dish.name;
      copy.querySelector(".data_price").textContent = dish.price;
-     if(dish.discount){
-         copy.querySelector(".data_price").classList.add("");
-     }else {
+     copy.querySelector("img").setAttribute("src", "imgs/small/" + dish.image + "-sm.jpg");
+
+     console.log('hello' + dish.image + " bye");
+     if (dish.discount) {
+         copy.querySelector(".data_price").classList.add("discount");
+     } else {
          copy.querySelector(".data_discount").remove();
-    }
+     }
+
+     if (!dish.soldout) {
+         copy.querySelector("article").classList.remove("soldOut");
+     }
 
 
 
